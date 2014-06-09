@@ -5,20 +5,20 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\renderers;
+namespace yii\apidocchm\renderers;
 
 use Yii;
-use yii\apidoc\helpers\ApiMarkdown;
-use yii\apidoc\helpers\ApiMarkdownLaTeX;
-use yii\apidoc\models\BaseDoc;
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\ConstDoc;
-use yii\apidoc\models\Context;
-use yii\apidoc\models\EventDoc;
-use yii\apidoc\models\InterfaceDoc;
-use yii\apidoc\models\MethodDoc;
-use yii\apidoc\models\PropertyDoc;
-use yii\apidoc\models\TraitDoc;
+use yii\apidocchm\helpers\ApiMarkdown;
+use yii\apidocchm\helpers\ApiMarkdownLaTeX;
+use yii\apidocchm\models\BaseDoc;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\ConstDoc;
+use yii\apidocchm\models\Context;
+use yii\apidocchm\models\EventDoc;
+use yii\apidocchm\models\InterfaceDoc;
+use yii\apidocchm\models\MethodDoc;
+use yii\apidocchm\models\PropertyDoc;
+use yii\apidocchm\models\TraitDoc;
 use yii\apidoc\models\TypeDoc;
 use yii\base\Component;
 use yii\console\Controller;

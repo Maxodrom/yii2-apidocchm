@@ -1,19 +1,19 @@
 <?php
 
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\InterfaceDoc;
-use yii\apidoc\models\TraitDoc;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\InterfaceDoc;
+use yii\apidocchm\models\TraitDoc;
 
 /**
  * @var ClassDoc[]|InterfaceDoc[]|TraitDoc[] $types
  * @var yii\web\View $this
- * @var \yii\apidoc\templates\html\ApiRenderer $renderer
+ * @var \yii\apidocchm\templates\html\ApiRenderer $renderer
  */
 
 $renderer = $this->context;
 
 if (isset($readme)) {
-    echo \yii\apidoc\helpers\ApiMarkdown::process($readme);
+    echo \yii\apidocchm\helpers\ApiMarkdown::process($readme);
 }
 
 ?><h1>Class Reference</h1>
@@ -34,7 +34,7 @@ foreach ($types as $i => $class):
 ?>
     <tr>
         <td><?= $renderer->createTypeLink($class, $class, $class->name) ?></td>
-        <td><?= \yii\apidoc\helpers\ApiMarkdown::process($class->shortDescription, $class, true) ?></td>
+        <td><?= \yii\apidocchm\helpers\ApiMarkdown::process($class->shortDescription, $class, true) ?></td>
     </tr>
 <?php endforeach; ?>
 </table>

@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\bootstrap;
+namespace yii\apidocchm\templates\bootstrap;
 
 use Yii;
-use yii\apidoc\helpers\ApiIndexer;
+use yii\apidocchm\helpers\ApiIndexer;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 
@@ -17,12 +17,12 @@ use yii\helpers\FileHelper;
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
  */
-class ApiRenderer extends \yii\apidoc\templates\html\ApiRenderer
+class ApiRenderer extends \yii\apidocchm\templates\html\ApiRenderer
 {
     use RendererTrait;
 
-    public $layout = '@yii/apidoc/templates/bootstrap/layouts/api.php';
-    public $indexView = '@yii/apidoc/templates/bootstrap/views/index.php';
+    public $layout = '@yii/apidocchm/templates/bootstrap/layouts/api.php';
+    public $indexView = '@yii/apidocchm/templates/bootstrap/views/index.php';
 
     /**
      * @inheritdoc

@@ -1,14 +1,14 @@
 <?php
 
-use yii\apidoc\helpers\ApiMarkdown;
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\InterfaceDoc;
-use yii\apidoc\models\TraitDoc;
+use yii\apidocchm\helpers\ApiMarkdown;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\InterfaceDoc;
+use yii\apidocchm\models\TraitDoc;
 
 /**
  * @var ClassDoc|InterfaceDoc|TraitDoc $type
  * @var yii\web\View $this
- * @var \yii\apidoc\templates\html\ApiRenderer $renderer
+ * @var \yii\apidocchm\templates\html\ApiRenderer $renderer
  */
 
 $renderer = $this->context;
@@ -87,21 +87,21 @@ $renderer = $this->context;
 </div>
 
 <a name="properties"></a>
-<?= $this->render('@yii/apidoc/templates/html/views/propertySummary', ['type' => $type, 'protected' => false]) ?>
-<?= $this->render('@yii/apidoc/templates/html/views/propertySummary', ['type' => $type, 'protected' => true]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/propertySummary', ['type' => $type, 'protected' => false]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/propertySummary', ['type' => $type, 'protected' => true]) ?>
 
 <a name="methods"></a>
-<?= $this->render('@yii/apidoc/templates/html/views/methodSummary', ['type' => $type, 'protected' => false]) ?>
-<?= $this->render('@yii/apidoc/templates/html/views/methodSummary', ['type' => $type, 'protected' => true]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/methodSummary', ['type' => $type, 'protected' => false]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/methodSummary', ['type' => $type, 'protected' => true]) ?>
 
 <a name="events"></a>
-<?= $this->render('@yii/apidoc/templates/html/views/eventSummary', ['type' => $type]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/eventSummary', ['type' => $type]) ?>
 
 <a name="constants"></a>
-<?= $this->render('@yii/apidoc/templates/html/views/constSummary', ['type' => $type]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/constSummary', ['type' => $type]) ?>
 
-<?= $this->render('@yii/apidoc/templates/html/views/propertyDetails', ['type' => $type]) ?>
-<?= $this->render('@yii/apidoc/templates/html/views/methodDetails', ['type' => $type]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/propertyDetails', ['type' => $type]) ?>
+<?= $this->render('@yii/apidocchm/templates/html/views/methodDetails', ['type' => $type]) ?>
 <?php if ($type instanceof ClassDoc): ?>
-    <?= $this->render('@yii/apidoc/templates/html/views/eventDetails', ['type' => $type]) ?>
+    <?= $this->render('@yii/apidocchm/templates/html/views/eventDetails', ['type' => $type]) ?>
 <?php endif; ?>

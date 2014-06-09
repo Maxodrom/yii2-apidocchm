@@ -5,9 +5,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\models;
+namespace yii\apidocchm\models;
 
-use yii\apidoc\helpers\PrettyPrinter;
+use yii\apidocchm\helpers\PrettyPrinter;
 use yii\base\Object;
 
 /**

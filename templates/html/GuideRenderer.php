@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\html;
+namespace yii\apidocchm\templates\html;
 
-use yii\apidoc\helpers\ApiMarkdown;
+use yii\apidocchm\helpers\ApiMarkdown;
 use yii\console\Controller;
 use yii\helpers\Console;
-use yii\apidoc\renderers\GuideRenderer as BaseGuideRenderer;
+use yii\apidocchm\renderers\GuideRenderer as BaseGuideRenderer;
 use Yii;
 use yii\helpers\Html;
 use yii\web\AssetManager;

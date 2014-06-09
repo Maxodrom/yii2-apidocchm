@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\commands;
+namespace yii\apidocchm\commands;
 
-use yii\apidoc\components\BaseController;
-use yii\apidoc\models\Context;
-use yii\apidoc\renderers\ApiRenderer;
-use yii\apidoc\renderers\BaseRenderer;
+use yii\apidocchm\components\BaseController;
+use yii\apidocchm\models\Context;
+use yii\apidocchm\renderers\ApiRenderer;
+use yii\apidocchm\renderers\BaseRenderer;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
@@ -146,7 +146,7 @@ class ApiController extends BaseController
      */
     protected function findRenderer($template)
     {
-        $rendererClass = 'yii\\apidoc\\templates\\' . $template . '\\ApiRenderer';
+        $rendererClass = 'yii\\apidocchm\\templates\\' . $template . '\\ApiRenderer';
         if (!class_exists($rendererClass)) {
             $this->stderr('Renderer not found.' . PHP_EOL);
 

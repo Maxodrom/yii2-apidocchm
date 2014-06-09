@@ -5,14 +5,14 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\html;
+namespace yii\apidocchm\templates\html;
 
-use yii\apidoc\helpers\ApiMarkdown;
-use yii\apidoc\models\MethodDoc;
-use yii\apidoc\models\PropertyDoc;
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\Context;
-use yii\apidoc\renderers\ApiRenderer as BaseApiRenderer;
+use yii\apidocchm\helpers\ApiMarkdown;
+use yii\apidocchm\models\MethodDoc;
+use yii\apidocchm\models\PropertyDoc;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\Context;
+use yii\apidocchm\renderers\ApiRenderer as BaseApiRenderer;
 use yii\base\ViewContextInterface;
 use yii\helpers\Console;
 use yii\helpers\Html;
@@ -41,11 +41,11 @@ class ApiRenderer extends BaseApiRenderer implements ViewContextInterface
     /**
      * @var string path or alias of the view file to use for rendering types (classes, interfaces, traits).
      */
-    public $typeView = '@yii/apidoc/templates/html/views/type.php';
+    public $typeView = '@yii/apidocchm/templates/html/views/type.php';
     /**
      * @var string path or alias of the view file to use for rendering the index page.
      */
-    public $indexView = '@yii/apidoc/templates/html/views/index.php';
+    public $indexView = '@yii/apidocchm/templates/html/views/index.php';
     /**
      * @var View
      */
@@ -272,7 +272,7 @@ class ApiRenderer extends BaseApiRenderer implements ViewContextInterface
      */
     public function getViewPath()
     {
-        return Yii::getAlias('@yii/apidoc/templates/html/views');
+        return Yii::getAlias('@yii/apidocchm/templates/html/views');
     }
 
     /**

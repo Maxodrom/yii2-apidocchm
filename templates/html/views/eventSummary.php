@@ -1,13 +1,13 @@
 <?php
 
-use yii\apidoc\helpers\ApiMarkdown;
-use yii\apidoc\models\ClassDoc;
+use yii\apidocchm\helpers\ApiMarkdown;
+use yii\apidocchm\models\ClassDoc;
 use yii\helpers\ArrayHelper;
 
 /**
  * @var ClassDoc $type
  * @var yii\web\View $this
- * @var \yii\apidoc\templates\html\ApiRenderer $renderer
+ * @var \yii\apidocchm\templates\html\ApiRenderer $renderer
  */
 
 $renderer = $this->context;

@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\renderers;
+namespace yii\apidocchm\renderers;
 
 use Yii;
 

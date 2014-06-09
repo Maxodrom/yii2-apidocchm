@@ -6,7 +6,7 @@
  * Time: 18:15
  */
 
-namespace yii\apidoc\helpers;
+namespace yii\apidocchm\helpers;
 
 
 use cebe\markdown\Markdown;

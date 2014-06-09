@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\models;
+namespace yii\apidocchm\models;
 
 /**
  * Represents API documentation information for a `trait`.

@@ -1,14 +1,14 @@
 <?php
 
-use yii\apidoc\helpers\ApiMarkdown;
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\TraitDoc;
+use yii\apidocchm\helpers\ApiMarkdown;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\TraitDoc;
 use yii\helpers\ArrayHelper;
 
 /**
  * @var ClassDoc|TraitDoc $type
  * @var yii\web\View $this
- * @var \yii\apidoc\templates\html\ApiRenderer $renderer
+ * @var \yii\apidocchm\templates\html\ApiRenderer $renderer
  */
 
 $renderer = $this->context;

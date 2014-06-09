@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\helpers;
+namespace yii\apidocchm\helpers;
 
 use cebe\markdown\GithubMarkdown;
 use phpDocumentor\Reflection\DocBlock\Type\Collection;
-use yii\apidoc\models\TypeDoc;
-use yii\apidoc\renderers\BaseRenderer;
+use yii\apidocchm\models\TypeDoc;
+use yii\apidocchm\renderers\BaseRenderer;
 use yii\helpers\Inflector;
 use yii\helpers\Markdown;
 

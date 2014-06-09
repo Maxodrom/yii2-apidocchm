@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\helpers;
+namespace yii\apidocchm\helpers;
 
 use cebe\markdown\latex\GithubMarkdown;
-use yii\apidoc\models\TypeDoc;
-use yii\apidoc\renderers\BaseRenderer;
+use yii\apidocchm\models\TypeDoc;
+use yii\apidocchm\renderers\BaseRenderer;
 use yii\helpers\Markdown;
 
 /**

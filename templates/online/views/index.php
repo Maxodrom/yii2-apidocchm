@@ -1,8 +1,8 @@
 <?php
 
-use yii\apidoc\models\ClassDoc;
-use yii\apidoc\models\InterfaceDoc;
-use yii\apidoc\models\TraitDoc;
+use yii\apidocchm\models\ClassDoc;
+use yii\apidocchm\models\InterfaceDoc;
+use yii\apidocchm\models\TraitDoc;
 
 /**
  * @var ClassDoc[]|InterfaceDoc[]|TraitDoc[] $types
@@ -27,7 +27,7 @@ foreach ($types as $i => $class):
 ?>
     <tr>
         <td><?= $this->context->typeLink($class, $class->name) ?></td>
-        <td><?= \yii\apidoc\helpers\ApiMarkdown::process($class->shortDescription, $class, true) ?></td>
+        <td><?= \yii\apidocchm\helpers\ApiMarkdown::process($class->shortDescription, $class, true) ?></td>
     </tr>
 <?php endforeach; ?>
 </table>

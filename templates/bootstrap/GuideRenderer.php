@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\bootstrap;
+namespace yii\apidocchm\templates\bootstrap;
 
 use Yii;
-use yii\apidoc\helpers\ApiIndexer;
+use yii\apidocchm\helpers\ApiIndexer;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 
@@ -17,11 +17,11 @@ use yii\helpers\FileHelper;
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
  */
-class GuideRenderer extends \yii\apidoc\templates\html\GuideRenderer
+class GuideRenderer extends \yii\apidocchm\templates\html\GuideRenderer
 {
     use RendererTrait;
 
-    public $layout = '@yii/apidoc/templates/bootstrap/layouts/guide.php';
+    public $layout = '@yii/apidocchm/templates/bootstrap/layouts/guide.php';
 
     /**
      * @inheritDoc

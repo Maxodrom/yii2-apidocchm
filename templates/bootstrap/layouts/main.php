@@ -1,6 +1,6 @@
 <?php
 
-use yii\apidoc\renderers\BaseRenderer;
+use yii\apidocchm\renderers\BaseRenderer;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
@@ -9,7 +9,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  */
 
-\yii\apidoc\templates\bootstrap\assets\AssetBundle::register($this);
+\yii\apidocchm\templates\bootstrap\assets\AssetBundle::register($this);
 
 // Navbar hides initial content when jumping to in-page anchor
 // https://github.com/twbs/bootstrap/issues/1768
@@ -80,7 +80,7 @@ $this->beginPage();
   </div>
 </div>
 <?php
-    \yii\apidoc\templates\bootstrap\assets\JsSearchAsset::register($this);
+    \yii\apidocchm\templates\bootstrap\assets\JsSearchAsset::register($this);
 
     // defer loading of the search index: https://developers.google.com/speed/docs/best-practices/payload?csw=1#DeferLoadingJS
     $this->registerJs(<<<JS

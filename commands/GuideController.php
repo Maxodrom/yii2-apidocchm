@@ -5,11 +5,11 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\commands;
+namespace yii\apidocchm\commands;
 
-use yii\apidoc\components\BaseController;
-use yii\apidoc\models\Context;
-use yii\apidoc\renderers\GuideRenderer;
+use yii\apidocchm\components\BaseController;
+use yii\apidocchm\models\Context;
+use yii\apidocchm\renderers\GuideRenderer;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 use Yii;
@@ -99,7 +99,7 @@ class GuideController extends BaseController
      */
     protected function findRenderer($template)
     {
-        $rendererClass = 'yii\\apidoc\\templates\\' . $template . '\\GuideRenderer';
+        $rendererClass = 'yii\\apidocchm\\templates\\' . $template . '\\GuideRenderer';
         if (!class_exists($rendererClass)) {
             $this->stderr('Renderer not found.' . PHP_EOL);
 

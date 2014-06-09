@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @var yii\apidoc\models\BaseDoc $object
+ * @var yii\apidocchm\models\BaseDoc $object
  * @var yii\web\View $this
  */
 
-$type = $object instanceof \yii\apidoc\models\TypeDoc ? $object : $object->definedBy;
+$type = $object instanceof \yii\apidocchm\models\TypeDoc ? $object : $object->definedBy;
 
 $see = [];
 foreach ($object->tags as $tag) {
@@ -15,7 +15,7 @@ foreach ($object->tags as $tag) {
         if (strpos($ref, '://') === false) {
             $ref = '[[' . $ref . ']]';
         }
-        $see[] = rtrim(\yii\apidoc\helpers\ApiMarkdown::process($ref . ' ' . $tag->getDescription(), $type, true), ". \r\n");
+        $see[] = rtrim(\yii\apidocchm\helpers\ApiMarkdown::process($ref . ' ' . $tag->getDescription(), $type, true), ". \r\n");
     }
 }
 if (empty($see)) {

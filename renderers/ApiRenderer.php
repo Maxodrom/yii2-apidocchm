@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\renderers;
+namespace yii\apidocchm\renderers;
 
 use Yii;
-use yii\apidoc\models\Context;
+use yii\apidocchm\models\Context;
 
 /**
  * Base class for all API documentation renderers

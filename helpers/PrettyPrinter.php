@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\helpers;
+namespace yii\apidocchm\helpers;
 
 use PHPParser_Node_Expr;
 use PHPParser_Node_Expr_Array;

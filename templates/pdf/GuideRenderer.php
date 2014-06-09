@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\pdf;
+namespace yii\apidocchm\templates\pdf;
 
 use cebe\markdown\latex\GithubMarkdown;
 use Yii;
-use yii\apidoc\helpers\ApiMarkdownLaTeX;
-use yii\apidoc\helpers\IndexFileAnalyzer;
+use yii\apidocchm\helpers\ApiMarkdownLaTeX;
+use yii\apidocchm\helpers\IndexFileAnalyzer;
 use yii\helpers\Console;
 
 /**
@@ -18,7 +18,7 @@ use yii\helpers\Console;
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
  */
-class GuideRenderer extends \yii\apidoc\templates\html\GuideRenderer
+class GuideRenderer extends \yii\apidocchm\templates\html\GuideRenderer
 {
     /**
      * @inheritDoc

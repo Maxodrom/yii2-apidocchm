@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\bootstrap;
+namespace yii\apidocchm\templates\bootstrap;
 
 use Yii;
 use yii\base\InvalidConfigException;

@@ -5,12 +5,12 @@
  * Date: 28.05.14
  * Time: 15:30
  */
-
-namespace yii\apidoc\helpers;
+ 
+namespace yii\apidocchm\helpers;
 
 use phpDocumentor\Reflection\DocBlock\Type\Collection;
-use yii\apidoc\models\MethodDoc;
-use yii\apidoc\models\TypeDoc;
+use yii\apidocchm\models\MethodDoc;
+use yii\apidocchm\models\TypeDoc;
 
 /**
  * Class ApiMarkdownTrait

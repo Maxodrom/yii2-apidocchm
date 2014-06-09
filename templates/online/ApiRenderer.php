@@ -5,9 +5,9 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\online;
+namespace yii\apidocchm\templates\online;
 
-use yii\apidoc\models\TypeDoc;
+use yii\apidocchm\models\TypeDoc;
 use Yii;
 use yii\helpers\Console;
 
@@ -16,10 +16,10 @@ use yii\helpers\Console;
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
  */
-class ApiRenderer extends \yii\apidoc\templates\html\ApiRenderer
+class ApiRenderer extends \yii\apidocchm\templates\html\ApiRenderer
 {
     public $layout = false;
-    public $indexView = '@yii/apidoc/templates/online/views/index.php';
+    public $indexView = '@yii/apidocchm/templates/online/views/index.php';
 
     public $pageTitle = 'Yii Framework 2.0 API Documentation';
 

@@ -5,12 +5,12 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\components;
+namespace yii\apidocchm\components;
 
-use yii\apidoc\renderers\BaseRenderer;
+use yii\apidocchm\renderers\BaseRenderer;
 use yii\console\Controller;
 use yii\helpers\Console;
-use yii\apidoc\models\Context;
+use yii\apidocchm\models\Context;
 use Yii;
 
 /**

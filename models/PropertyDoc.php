@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\models;
+namespace yii\apidocchm\models;
 
 use phpDocumentor\Reflection\DocBlock\Tag\VarTag;
-use yii\apidoc\helpers\PrettyPrinter;
+use yii\apidocchm\helpers\PrettyPrinter;
 
 /**
  * Represents API documentation information for a `property`.

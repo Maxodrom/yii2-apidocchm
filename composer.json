@@ -1,5 +1,5 @@
 {
-	"name": "yiisoft/yii2-apidoc",
+	"name": "yiisoft/yii2-apidocchm",
 	"description": "API Documentation generator for the Yii framework 2.0",
 	"keywords": ["yii2", "phpdoc", "apidoc", "api", "documentation"],
 	"type": "yii2-extension",
@@ -31,7 +31,7 @@
 		"cebe/markdown-latex": "*"
 	},
 	"autoload": {
-		"psr-4": { "yii\\apidoc\\": "" }
+		"psr-4": { "yii\\apidocchm\\": "" }
 	},
 	"bin": ["apidoc"]
 }

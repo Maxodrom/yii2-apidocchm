@@ -5,7 +5,7 @@
  * @author Carsten Brandt <mail@cebe.cc>
  */
 
-namespace yii\apidoc\helpers;
+namespace yii\apidocchm\helpers;
 
 
 use cebe\jssearch\Indexer;
