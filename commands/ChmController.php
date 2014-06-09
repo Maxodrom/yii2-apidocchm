@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\commands;
+namespace yii\apidocchm\commands;
 
-use yii\apidoc\models\Context;
-use yii\apidoc\renderers\GuideRenderer;
+use yii\apidocchm\models\Context;
+use yii\apidocchm\renderers\GuideRenderer;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 use yii\console\Controller;
@@ -19,8 +19,8 @@ use yii\helpers\HTML;
 use yii\helpers\StringHelper;
 use yii\helpers\VarDumper;
 
-use yii\apidoc\helpers\IndexFileAnalyzer;
-use yii\apidoc\components\BaseController;
+use yii\apidocchm\helpers\IndexFileAnalyzer;
+use yii\apidocchm\components\BaseController;
 
 class ChmController extends BaseController
 {
@@ -317,7 +317,7 @@ class ChmController extends BaseController
      */
     protected function findRenderer($template = 'bootstrapchm')
     {
-        $rendererClass = 'yii\\apidoc\\templates\\' . $template . '\\ApiRenderer';
+        $rendererClass = 'yii\\apidocchm\\templates\\' . $template . '\\ApiRenderer';
         if (!class_exists($rendererClass)) {
             $this->stderr('Renderer not found.' . PHP_EOL);
 

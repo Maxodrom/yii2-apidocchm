@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\bootstrapchm\assets;
+namespace yii\apidocchm\templates\bootstrapchm\assets;
 
 use yii\web\View;
 
@@ -17,7 +17,7 @@ use yii\web\View;
  */
 class AssetBundle extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@yii/apidoc/templates/bootstrapchm/assets/css';
+    public $sourcePath = '@yii/apidocchm/templates/bootstrapchm/assets/css';
     public $css = [
 //		'api.css',
         'style.css',

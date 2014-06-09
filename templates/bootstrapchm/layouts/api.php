@@ -1,7 +1,7 @@
 <?php
 
-use yii\apidoc\templates\bootstrapchm\ApiRenderer;
-use yii\apidoc\templates\bootstrap\SideNavWidget;
+use yii\apidocchm\templates\bootstrapchm\ApiRenderer;
+use yii\apidocchm\templates\bootstrap\SideNavWidget;
 use yii\helpers\StringHelper;
 
 /**
@@ -13,7 +13,7 @@ use yii\helpers\StringHelper;
 /** @var ApiRenderer $renderer */
 $renderer = $this->context;
 
-$this->beginContent('@yii/apidoc/templates/bootstrapchm/layouts/main.php'); ?>
+$this->beginContent('@yii/apidocchm/templates/bootstrapchm/layouts/main.php'); ?>
 
 <div class="row">
     <div class="col-md-9 api-content" role="main">

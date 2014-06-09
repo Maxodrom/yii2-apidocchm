@@ -5,10 +5,10 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\apidoc\templates\bootstrapchm;
+namespace yii\apidocchm\templates\bootstrapchm;
 
 use Yii;
-use yii\apidoc\helpers\ApiIndexer;
+use yii\apidocchm\helpers\ApiIndexer;
 use yii\helpers\Console;
 use yii\helpers\FileHelper;
 
@@ -17,9 +17,9 @@ use yii\helpers\FileHelper;
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
  */
-class GuideRenderer extends \yii\apidoc\templates\bootstrap\GuideRenderer
+class GuideRenderer extends \yii\apidocchm\templates\bootstrap\GuideRenderer
 {
-    public $layout = '@yii/apidoc/templates/bootstrapchm/layouts/guide.php';
+    public $layout = '@yii/apidocchm/templates/bootstrapchm/layouts/guide.php';
 
     // page title ugly hack
     // TODO highly invasive surgery

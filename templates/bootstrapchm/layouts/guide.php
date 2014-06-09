@@ -1,13 +1,13 @@
 <?php
 
-use yii\apidoc\templates\bootstrap\SideNavWidget;
+use yii\apidocchm\templates\bootstrap\SideNavWidget;
 
 /**
  * @var yii\web\View $this
  * @var string $content
  */
 
-$this->beginContent('@yii/apidoc/templates/bootstrapchm/layouts/main.php'); ?>
+$this->beginContent('@yii/apidocchm/templates/bootstrapchm/layouts/main.php'); ?>
 
 <div class="row">
     <div class="col-md-9 guide-content" role="main">
