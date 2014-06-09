@@ -21,6 +21,7 @@
 	"require": {
 		"yiisoft/yii2-dev": "*",
 		"yiisoft/yii2-bootstrap": "*",
+		"yiisoft/jquery": "1.*",
 		"twbs/bootstrap": "*",
 		"phpdocumentor/reflection": ">=1.0.3",
 		"phpdocumentor/reflection-docblock": ">2.0.1",
