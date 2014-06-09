@@ -29,12 +29,16 @@ abstract class BaseController extends Controller
      * @var string|array files to exclude.
      */
     public $exclude;
+    /**
+     * @var boolean force overwrite
+     */
+    public $overwrite;
 
     protected function normalizeTargetDir($target)
     {
         $target = rtrim(Yii::getAlias($target), '\\/');
         if (file_exists($target)) {
-            if (is_dir($target) && !$this->confirm('TargetDirectory already exists. Overwrite?', true)) {
+            if (is_dir($target) && !$this->overwrite && !$this->confirm('TargetDirectory already exists. Overwrite?', true)) {
                 $this->stderr('User aborted.' . PHP_EOL);
 
                 return false;
@@ -128,6 +132,6 @@ abstract class BaseController extends Controller
      */
     public function options($actionId)
     {
-        return array_merge(parent::options($actionId), ['template', 'exclude']);
+        return array_merge(parent::options($actionId), ['template', 'exclude', 'overwrite']);
     }
 }
