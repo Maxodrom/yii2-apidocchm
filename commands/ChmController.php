@@ -25,6 +25,7 @@ use yii\apidocchm\components\BaseController;
 class ChmController extends BaseController
 {
     const GUIDE_PREFIX = 'guide-';
+    const GUIDE_INDEX_TITLE = '*** Guide ***';
 
     public $layout = false;
 
@@ -228,6 +229,7 @@ class ChmController extends BaseController
                 {
                     $h1['file'] = static::GUIDE_PREFIX . basename($h1['file'], '.md') . '.html';
                     $this->addFile($h1['file']);
+                    $this->addIndexItem($h1['file'], static::GUIDE_INDEX_TITLE, $h1['headline']);
                 }
                 else
                 {
@@ -243,6 +245,7 @@ class ChmController extends BaseController
                     {
                         $h2['file'] = static::GUIDE_PREFIX . basename($h2['file'], '.md') . '.html';
                         $this->addFile($h2['file']);
+                        $this->addIndexItem($h2['file'], static::GUIDE_INDEX_TITLE, $h2['headline']);
                     }
                     else
                     {
