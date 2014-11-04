@@ -28,6 +28,7 @@ class GuideController extends BaseController
      */
     public $apiDocs;
 
+
     /**
      * Renders API documentation files
      * @param array $sourceDirs
@@ -66,16 +67,12 @@ class GuideController extends BaseController
 
         $this->stdout('Publishing images...');
         foreach ($sourceDirs as $source) {
-            FileHelper::copyDirectory(rtrim($source, '/\\') . '/images', $targetDir . '/images');
+            $imageDir = rtrim($source, '/\\') . '/images';
+            if (file_exists($imageDir)) {
+                FileHelper::copyDirectory($imageDir, $targetDir . '/images');
+            }
         }
         $this->stdout('done.' . PHP_EOL, Console::FG_GREEN);
-
-        // generate api references.txt
-        $references = [];
-        foreach ($files as $file) {
-            $references[] = basename($file, '.md');
-        }
-        file_put_contents($targetDir . '/guide-references.txt', implode("\n", $references));
     }
 
 
@@ -112,8 +109,8 @@ class GuideController extends BaseController
     /**
      * @inheritdoc
      */
-    public function options($actionId)
+    public function options($actionID)
     {
-        return array_merge(parent::options($actionId), ['apiDocs']);
+        return array_merge(parent::options($actionID), ['apiDocs']);
     }
 }

@@ -34,6 +34,7 @@ abstract class BaseController extends Controller
      */
     public $overwrite;
 
+
     protected function normalizeTargetDir($target)
     {
         $target = rtrim(Yii::getAlias($target), '\\/');
@@ -130,8 +131,8 @@ abstract class BaseController extends Controller
     /**
      * @inheritdoc
      */
-    public function options($actionId)
+    public function options($actionID)
     {
-        return array_merge(parent::options($actionId), ['template', 'exclude', 'overwrite']);
+        return array_merge(parent::options($actionID), ['template', 'exclude', 'overwrite']);
     }
 }

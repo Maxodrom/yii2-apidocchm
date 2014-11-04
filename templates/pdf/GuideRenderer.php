@@ -7,10 +7,8 @@
 
 namespace yii\apidocchm\templates\pdf;
 
-use cebe\markdown\latex\GithubMarkdown;
 use Yii;
 use yii\apidocchm\helpers\ApiMarkdownLaTeX;
-use yii\apidocchm\helpers\IndexFileAnalyzer;
 use yii\helpers\Console;
 
 /**
@@ -43,16 +41,8 @@ class GuideRenderer extends \yii\apidocchm\templates\html\GuideRenderer
         }
         $done = 0;
         $fileData = [];
-        $chapters = [];
+        $chapters = $this->loadGuideStructure($files);
         foreach ($files as $file) {
-            if (basename($file) == 'README.md') {
-                $indexAnalyzer = new IndexFileAnalyzer();
-                $chapters = $indexAnalyzer->analyze(file_get_contents($file));
-                continue; // to not add index file to nav
-            }
-            if (basename($file) == 'tutorial-i18n.md') {
-                continue; // TODO avoid i18n tut because of non displayable characters right now. need to fix it.
-            }
             $fileData[basename($file)] = file_get_contents($file);
 //            if (preg_match("/^(.*)\n=+/", $fileData[$file], $matches)) {
 //                $headlines[$file] = $matches[1];

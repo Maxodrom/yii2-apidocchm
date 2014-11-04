@@ -4,13 +4,11 @@ use yii\apidocchm\templates\bootstrap\ApiRenderer;
 use yii\apidocchm\templates\bootstrap\SideNavWidget;
 use yii\helpers\StringHelper;
 
-/**
- * @var yii\web\View $this
- * @var array $types
- * @var string $content
- */
+/* @var $this yii\web\View */
+/* @var $types array */
+/* @var $content string */
 
-/** @var ApiRenderer $renderer */
+/** @var $renderer ApiRenderer */
 $renderer = $this->context;
 
 $this->beginContent('@yii/apidocchm/templates/bootstrap/layouts/main.php'); ?>

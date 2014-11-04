@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: cebe
- * Date: 28.05.14
- * Time: 15:30
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
  */
  
 namespace yii\apidocchm\helpers;
@@ -15,13 +14,16 @@ use yii\apidocchm\models\TypeDoc;
 /**
  * Class ApiMarkdownTrait
  *
- * @property TypeDoc $context
+ * @property TypeDoc $renderingContext
  */
 trait ApiMarkdownTrait
 {
+    /**
+     * @marker [[
+     */
     protected function parseApiLinks($text)
     {
-        $context = $this->context;
+        $context = $this->renderingContext;
 
         if (preg_match('/^\[\[([\w\d\\\\\(\):$]+)(\|[^\]]*)?\]\]/', $text, $matches)) {
 
@@ -37,6 +39,7 @@ trait ApiMarkdownTrait
                     // Collection resolves relative types
                     $typeName = (new Collection([$typeName], $context->phpDocContext))->__toString();
                 }
+                /** @var $type TypeDoc */
                 $type = static::$renderer->apiContext->getType($typeName);
                 if ($type === null) {
                     static::$renderer->apiContext->errors[] = [
@@ -45,7 +48,7 @@ trait ApiMarkdownTrait
                     ];
 
                     return [
-                        '<span style="background: #f00;">' . $typeName . '::' . $subjectName . '</span>',
+                        ['brokenApiLink', '<span style="background: #f00;">' . $typeName . '::' . $subjectName . '</span>'],
                         $offset
                     ];
                 } else {
@@ -58,7 +61,7 @@ trait ApiMarkdownTrait
                         }
 
                         return [
-                            static::$renderer->createSubjectLink($subject, $title),
+                            ['apiLink', static::$renderer->createSubjectLink($subject, $title)],
                             $offset
                         ];
                     } else {
@@ -68,14 +71,14 @@ trait ApiMarkdownTrait
                         ];
 
                         return [
-                            '<span style="background: #ff0;">' . $type->name . '</span><span style="background: #f00;">::' . $subjectName . '</span>',
+                            ['brokenApiLink', '<span style="background: #ff0;">' . $type->name . '</span><span style="background: #f00;">::' . $subjectName . '</span>'],
                             $offset
                         ];
                     }
                 }
             } elseif ($context !== null && ($subject = $context->findSubject($object)) !== null) {
                 return [
-                    static::$renderer->createSubjectLink($subject, $title),
+                    ['apiLink', static::$renderer->createSubjectLink($subject, $title)],
                     $offset
                 ];
             }
@@ -86,12 +89,12 @@ trait ApiMarkdownTrait
             }
             if (($type = static::$renderer->apiContext->getType($object)) !== null) {
                 return [
-                    static::$renderer->createTypeLink($type, null, $title),
+                    ['apiLink', static::$renderer->createTypeLink($type, null, $title)],
                     $offset
                 ];
             } elseif (strpos($typeLink = static::$renderer->createTypeLink($object, null, $title), '<a href') !== false) {
                 return [
-                    $typeLink,
+                    ['apiLink', $typeLink],
                     $offset
                 ];
             }
@@ -101,11 +104,21 @@ trait ApiMarkdownTrait
             ];
 
             return [
-                '<span style="background: #f00;">' . $object . '</span>',
+                ['brokenApiLink', '<span style="background: #f00;">' . $object . '</span>'],
                 $offset
             ];
         }
 
-        return ['[[', 2];
+        return [['text', '[['], 2];
     }
-} 
+
+    protected function renderApiLink($block)
+    {
+        return $block[1];
+    }
+
+    protected function renderBrokenApiLink($block)
+    {
+        return $block[1];
+    }
+}

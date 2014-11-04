@@ -27,22 +27,19 @@ class ApiMarkdownLaTeX extends GithubMarkdown
      */
     public static $renderer;
 
-    protected $context;
+    protected $renderingContext;
 
-    protected function inlineMarkers()
+
+    protected function renderApiLink($block)
     {
-        return array_merge(parent::inlineMarkers(), [
-            '[[' => 'parseApiLinksLatex',
-        ]);
+        // TODO allow break also on camel case
+        $latex = '\texttt{'.str_replace(['\\textbackslash', '::'], ['\allowbreak{}\\textbackslash', '\allowbreak{}::\allowbreak{}'], $this->escapeLatex(strip_tags($block[1]))).'}';
+        return $latex;
     }
 
-    protected function parseApiLinksLatex($text)
+    protected function renderBrokenApiLink($block)
     {
-        list($html, $offset) = $this->parseApiLinks($text);
-
-        $latex = '\texttt{'.str_replace(['\\textbackslash', '::'], ['\allowbreak{}\\textbackslash', '\allowbreak{}::\allowbreak{}'], $this->escapeLatex(strip_tags($html))).'}';
-
-        return [$latex, $offset];
+        return $this->renderApiLink($block);
     }
 
     /**
@@ -62,7 +59,7 @@ class ApiMarkdownLaTeX extends GithubMarkdown
         if (is_string($context)) {
             $context = static::$renderer->apiContext->getType($context);
         }
-        Markdown::$flavors['api-latex']->context = $context;
+        Markdown::$flavors['api-latex']->renderingContext = $context;
 
         if ($paragraph) {
             return Markdown::processParagraph($content, 'api-latex');

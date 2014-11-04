@@ -33,8 +33,8 @@ class Context extends Component
      * @var TraitDoc[]
      */
     public $traits = [];
-
     public $errors = [];
+
 
     public function getType($type)
     {
@@ -175,8 +175,11 @@ class Context extends Component
                     continue;
                 }
                 foreach (['shortDescription', 'description', 'return', 'returnType', 'returnTypes', 'exceptions'] as $property) {
+                    // set all properties that are empty. descriptions will be concatenated.
                     if (empty($m->$property) || is_string($m->$property) && trim($m->$property) === '') {
                         $m->$property = $inheritedMethod->$property;
+                    } elseif ($property == 'description') {
+                        $m->$property = rtrim($m->$property) . "\n\n" . ltrim($inheritedMethod->$property);
                     }
                 }
                 foreach ($m->params as $i => $param) {
@@ -194,7 +197,7 @@ class Context extends Component
                     if (empty($param->type) || trim($param->type) === '') {
                         $param->type = $inheritedMethod->params[$i]->type;
                     }
-                    if (empty($param->types) || trim($param->types) === '') {
+                    if (empty($param->types)) {
                         $param->types = $inheritedMethod->params[$i]->types;
                     }
                 }
@@ -268,7 +271,7 @@ class Context extends Component
             if ($method->isStatic) {
                 continue;
             }
-            if (!strncmp($name, 'get', 3) && strlen($name) > 3 && $this->paramsOptional($method)) {
+            if (!strncmp($name, 'get', 3) && strlen($name) > 3 && $this->hasNonOptionalParams($method)) {
                 $propertyName = '$' . lcfirst(substr($method->name, 3));
                 if (isset($class->properties[$propertyName])) {
                     $property = $class->properties[$propertyName];
@@ -296,7 +299,7 @@ class Context extends Component
                     ]);
                 }
             }
-            if (!strncmp($name, 'set', 3) && strlen($name) > 3 && $this->paramsOptional($method, 1)) {
+            if (!strncmp($name, 'set', 3) && strlen($name) > 3 && $this->hasNonOptionalParams($method, 1)) {
                 $propertyName = '$' . lcfirst(substr($method->name, 3));
                 if (isset($class->properties[$propertyName])) {
                     $property = $class->properties[$propertyName];
@@ -328,18 +331,20 @@ class Context extends Component
     }
 
     /**
+     * Check whether a method has `$number` non-optional parameters.
      * @param MethodDoc $method
      * @param integer $number number of not optional parameters
      * @return bool
      */
-    private function paramsOptional($method, $number = 0)
+    private function hasNonOptionalParams($method, $number = 0)
     {
+        $count = 0;
         foreach ($method->params as $param) {
-            if (!$param->isOptional && $number-- <= 0) {
-                return false;
+            if (!$param->isOptional) {
+                $count++;
             }
         }
-        return true;
+        return $count == $number;
     }
 
     /**

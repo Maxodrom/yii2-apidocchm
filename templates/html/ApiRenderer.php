@@ -46,11 +46,13 @@ class ApiRenderer extends BaseApiRenderer implements ViewContextInterface
      * @var string path or alias of the view file to use for rendering the index page.
      */
     public $indexView = '@yii/apidocchm/templates/html/views/index.php';
+
     /**
      * @var View
      */
     private $_view;
     private $_targetDir;
+
 
     public function init()
     {
