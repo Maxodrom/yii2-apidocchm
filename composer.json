@@ -21,26 +21,27 @@
 	"require": {
 		"yiisoft/yii2-dev": "*",
 		"yiisoft/yii2-bootstrap": "*",
-		"yiisoft/jquery": "1.*",
+		"bower-asset/jquery": "1.*@stable",
 		"twbs/bootstrap": "*",
 		"phpdocumentor/reflection": ">=1.0.3",
 		"phpdocumentor/reflection-docblock": ">2.0.1",
 		"nikic/php-parser": "0.9.*",
 		"cebe/js-search": "*",
 		"cebe/markdown": "~1.0.0",
-		"cebe/markdown-latex": "~1.0.0"
+		"cebe/markdown-latex": "~1.0.0",
+		"fxp/composer-asset-plugin": "*@dev"
 	},
 	"autoload": {
 		"psr-4": { "yii\\apidocchm\\": "" }
-    },
-    "bin": ["apidoc"],
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
 	},
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
-    }
+	"bin": ["apidoc"],
+	"extra": {
+		"branch-alias": {
+			"dev-master": "2.0.x-dev"
+		},
+		"asset-installer-paths": {
+			"npm-asset-library": "vendor/npm",
+			"bower-asset-library": "vendor/bower"
+		}
+	}
 }
