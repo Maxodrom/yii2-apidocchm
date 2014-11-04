@@ -31,11 +31,11 @@ $this->beginPage();
 
 </div>
 
-<footer class="footer">
+<div class="footer">
     <?php /* <p class="pull-left">&copy; My Company <?= date('Y') ?></p> */ ?>
     <p class="pull-right"><small>Page generated on <?= date('r') ?></small></p>
     <?= Yii::powered() ?>
-</footer>
+</div>
 
 <?php $this->endBody() ?>
 </body>
