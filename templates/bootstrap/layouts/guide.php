@@ -6,7 +6,17 @@ use yii\apidocchm\templates\bootstrap\SideNavWidget;
 /* @var $content string */
 /* @var $chapters array */
 
-$this->beginContent('@yii/apidocchm/templates/bootstrap/layouts/main.php'); ?>
+if (isset($currentFile)) {
+    foreach ($chapters as $chapter) {
+        foreach ($chapter['content'] as $chContent) {
+            if ($chContent['file'] == basename($currentFile)) {
+                $guideHeadline = "{$chContent['headline']} - {$chapter['headline']}";
+            }
+        }
+    }
+}
+
+$this->beginContent('@yii/apidocchm/templates/bootstrap/layouts/main.php', isset($guideHeadline) ? ['guideHeadline' => $guideHeadline] : []); ?>
 
 <div class="row">
     <div class="col-md-2">

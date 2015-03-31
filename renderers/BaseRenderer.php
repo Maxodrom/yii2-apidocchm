@@ -19,7 +19,7 @@ use yii\apidocchm\models\InterfaceDoc;
 use yii\apidocchm\models\MethodDoc;
 use yii\apidocchm\models\PropertyDoc;
 use yii\apidocchm\models\TraitDoc;
-use yii\apidoc\models\TypeDoc;
+use yii\apidocchm\models\TypeDoc;
 use yii\base\Component;
 use yii\console\Controller;
 

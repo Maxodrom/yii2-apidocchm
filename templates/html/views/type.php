@@ -69,6 +69,9 @@ $renderer = $this->context;
     <?php if (!empty($type->since)): ?>
         <tr><th>Available since version</th><td><?= $type->since ?></td></tr>
     <?php endif; ?>
+    <?php if (!empty($type->deprecatedSince) || !empty($type->deprecatedReason)): ?>
+        <tr class="deprecated"><th>Deprecated since version</th><td><?= $type->deprecatedSince ?> <?= $type->deprecatedReason ?></td></tr>
+    <?php endif; ?>
     <?php if (($sourceUrl = $renderer->getSourceUrl($type)) !== null): ?>
         <tr>
           <th>Source Code</th>
@@ -84,18 +87,18 @@ $renderer = $this->context;
     <?= $this->render('seeAlso', ['object' => $type]) ?>
 </div>
 
-<a name="properties"></a>
+<a id="properties"></a>
 <?= $this->render('@yii/apidocchm/templates/html/views/propertySummary', ['type' => $type, 'protected' => false]) ?>
 <?= $this->render('@yii/apidocchm/templates/html/views/propertySummary', ['type' => $type, 'protected' => true]) ?>
 
-<a name="methods"></a>
+<a id="methods"></a>
 <?= $this->render('@yii/apidocchm/templates/html/views/methodSummary', ['type' => $type, 'protected' => false]) ?>
 <?= $this->render('@yii/apidocchm/templates/html/views/methodSummary', ['type' => $type, 'protected' => true]) ?>
 
-<a name="events"></a>
+<a id="events"></a>
 <?= $this->render('@yii/apidocchm/templates/html/views/eventSummary', ['type' => $type]) ?>
 
-<a name="constants"></a>
+<a id="constants"></a>
 <?= $this->render('@yii/apidocchm/templates/html/views/constSummary', ['type' => $type]) ?>
 
 <?= $this->render('@yii/apidocchm/templates/html/views/propertyDetails', ['type' => $type]) ?>

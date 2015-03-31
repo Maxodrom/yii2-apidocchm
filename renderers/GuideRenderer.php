@@ -8,7 +8,7 @@
 namespace yii\apidocchm\renderers;
 
 use Yii;
-use yii\apidoc\helpers\IndexFileAnalyzer;
+use yii\apidocchm\helpers\IndexFileAnalyzer;
 
 /**
  * Base class for all Guide documentation renderers

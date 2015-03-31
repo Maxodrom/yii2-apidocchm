@@ -7,7 +7,7 @@
 
 namespace yii\apidocchm\templates\bootstrap;
 
-use yii\apidoc\models\TypeDoc;
+use yii\apidocchm\models\TypeDoc;
 
 /**
  * Common methods for renderers
