@@ -30,11 +30,15 @@ abstract class BaseController extends Controller
      */
     public $exclude;
     /**
+     * @var string page title
+     */
+    public $pageTitle;
+    /**
      * @var boolean force overwrite
      */
     public $overwrite;
 
-
+    
     /**
      * Checks that target directory is valid. Asks questions in tricky cases.
      * @param string $target
@@ -160,6 +164,6 @@ abstract class BaseController extends Controller
      */
     public function options($actionID)
     {
-        return array_merge(parent::options($actionID), ['template', 'exclude', 'overwrite']);
+        return array_merge(parent::options($actionID), ['template', 'exclude', 'pageTitle', 'overwrite']);
     }
 }

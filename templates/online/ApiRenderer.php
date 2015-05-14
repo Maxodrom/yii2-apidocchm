@@ -20,7 +20,6 @@ class ApiRenderer extends \yii\apidocchm\templates\html\ApiRenderer
 {
     public $layout = false;
     public $indexView = '@yii/apidocchm/templates/online/views/index.php';
-    public $pageTitle = 'Yii Framework 2.0 API Documentation';
 
 
     /**
