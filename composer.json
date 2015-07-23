@@ -28,7 +28,29 @@
         "nikic/php-parser": "0.9.*",
         "cebe/js-search": "*",
         "cebe/markdown": "~1.0.0 | ~1.1.0",
-        "cebe/markdown-latex": "~1.0.0"
+        "cebe/markdown-latex": "~1.0.0",
+        "yiisoft/yii2-apidoc": "*",
+        "yiisoft/yii2-authclient": "*",
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-composer": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-elasticsearch": "*",
+        "yiisoft/yii2-faker": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-imagine": "*",
+        "yiisoft/yii2-jui": "*",
+        "yiisoft/yii2-mongodb": "*",
+        "yiisoft/yii2-redis": "*",
+        "yiisoft/yii2-smarty": "*",
+        "yiisoft/yii2-sphinx": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-twig": "*"
+    },
+    "provide": {
+        "ext-curl": "*",
+        "ext-mongo": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
     },
     "autoload": {
         "psr-4": { "yii\\apidocchm\\": "" }
