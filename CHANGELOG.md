@@ -1,8 +1,15 @@
 Yii Framework 2 apidoc extension Change Log
 ===========================================
 
-2.0.4 under development
+2.0.5 under development
 -----------------------
+
+- Enh #13: Allow templates to be specified by class name (tom--)
+- Enh #13: Added a JSON template to output the class structure as a JSON file (tom--)
+
+
+2.0.4 May 10, 2015
+------------------
 
 - Bug #3: Interface documentation did not show inheritance (cebe)
 - Enh: Added ability to set pageTitle from command line (unclead)

@@ -27,7 +27,7 @@ $renderer = $this->context;
     }
     echo $type->name;
 ?></h1>
-<div id="nav">
+<div class="top-nav">
     <a href="index.html">All Classes</a>
     <?php if (!($type instanceof InterfaceDoc) && !empty($type->properties)): ?>
         | <a href="#properties">Properties</a>
@@ -55,7 +55,7 @@ $renderer = $this->context;
         <tr><th>Implements</th><td><?= $renderer->renderInterfaces($type->interfaces) ?></td></tr>
     <?php endif; ?>
     <?php if ($type instanceof InterfaceDoc && !empty($type->parentInterfaces)): ?>
-        <tr><th>Implements</th><td><?= $renderer->renderInterfaces($type->parentInterfaces) ?></td></tr>
+        <tr><th>Extends</th><td><?= $renderer->renderInterfaces($type->parentInterfaces) ?></td></tr>
     <?php endif; ?>
     <?php if (!($type instanceof InterfaceDoc) && !empty($type->traits)): ?>
         <tr><th>Uses Traits</th><td><?= $renderer->renderTraits($type->traits) ?></td></tr>
@@ -83,7 +83,7 @@ $renderer = $this->context;
     <?php endif; ?>
 </table>
 
-<div id="classDescription">
+<div class="class-description">
     <p><strong><?= ApiMarkdown::process($type->shortDescription, $type, true) ?></strong></p>
     <?= ApiMarkdown::process($type->description, $type) ?>
 
